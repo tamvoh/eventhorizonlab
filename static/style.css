@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Horizon';
+    src: url('/static/fonts/Horizon.woff2') format('woff2');
+}
+
+body {
+    background-color: black;
+    font-family: 'Horizon', sans-serif;
+    color: #fbe5d2;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    background-color: #a24a2a;
+}
+
+.view-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 150px;
+}
+
+.save {
+    display: inline-block;
+    background-color: #fbe5d2;
+    font-family: 'Poppins', sans-serif;
+    color: #a24a2a;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.image-container {
+    flex: 1
+    min-width: 0;
+}
+
+.image-container img {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: #fbe5d2;
+}
+
+.choice {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.choice p {
+    font-family: 'Poppins', sans-serif;
+    color: #fbe5d2;
+    margin: 0 0 10px;
+}
+
+.choice button {
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbe5d2;
+    color: #a24a2a;
+    width: 100%;
+    padding: 12px;
+}

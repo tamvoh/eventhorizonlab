@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT HORIZON LAB</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+    <link rel="icon" type="image/x-icon" href="static/IMG_2500.PNG">
+    <style>
+        #image {
+            display: none;
+        }
+        #image2 {
+            display: none;
+        }
+        #image3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <header>
+        <h1 class="title">EVENT HORIZON LAB</h1>
+    </header>
+
+    <main>
+        <div class="view-container">
+            <div class="image-container">
+                 <img id="image" src=
+                        "{{url_for('static', filename='normal_view.jpg')}}" />
+
+                <img id="image2" src=
+                        "{{url_for('static', filename='far_away.jpg')}}" />
+
+                <img id="image3" src=
+                        "{{url_for('static', filename='very_close_up.jpg')}}" />
+
+                <a class="save" id="save" href="{{ url_for('download')}}">SAVE THIS IMAGE</a>
+            </div>
+
+            <div class="choice">
+                <p>
+                    Choose a view:
+                </p>
+
+                <button type="button" onclick="show('image2')">
+                    FAR
+                </button>
+                <button type="button" onclick="show('image')">
+                    NORMAL
+                </button>
+                <button type="button" onclick="show('image3')">
+                    CLOSE
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function show(imageId) {
+                const downloadBtn = document.getElementById('save');
+
+                document.getElementById('image')
+                    .style.display = "none";
+                document.getElementById('image2')
+                    .style.display = "none";
+                document.getElementById('image3')
+                    .style.display = "none";
+
+                document.getElementById(imageId)
+                    .style.display = "block";
+
+                downloadBtn.href = `/download/${imageId}`;
+            }
+
+        </script>
+    </main>
+</body>
+</html>
